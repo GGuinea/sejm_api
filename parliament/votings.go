@@ -1,21 +1,21 @@
 package parliament
 
 type Voting struct {
-	Abstain          int    `json:"abstain"`
-	Date             string `json:"date"`
-	Description      string `json:"description"`
-	Kind             string `json:"kind"`
-	No               int    `json:"no"`
-	NotParticipating int    `json:"notParticipating"`
-	Sitting          int    `json:"sitting"`
-	SittingDay       int    `json:"sittingDay"`
-	Term             int    `json:"term"`
-	Title            string `json:"title"`
-	Topic            string `json:"topic"`
-	TotalVoted       int    `json:"totalVoted"`
-	VotingNumber     int    `json:"votingNumber"`
-	VotingOptions    []VotingOption
-	Votes            []Vote `json:"votes"`
+	Abstain          int            `json:"abstain"`
+	Date             string         `json:"date"`
+	Description      string         `json:"description"`
+	Kind             string         `json:"kind"`
+	No               int            `json:"no"`
+	NotParticipating int            `json:"notParticipating"`
+	Sitting          int            `json:"sitting"`
+	SittingDay       int            `json:"sittingDay"`
+	Term             int            `json:"term"`
+	Title            string         `json:"title"`
+	Topic            string         `json:"topic"`
+	TotalVoted       int            `json:"totalVoted"`
+	VotingNumber     int            `json:"votingNumber"`
+	VotingOptions    []VotingOption `json:"votingOptions"`
+	Votes            []Vote         `json:"votes"`
 }
 
 type VotingOption struct {
