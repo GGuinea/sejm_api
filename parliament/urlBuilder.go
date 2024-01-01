@@ -19,3 +19,11 @@ func getClubPath(base, id string) string {
 func getListCommitteesPath(base string) string {
 	return base + "/committees"
 }
+
+func getListEnvoysPath(base string) string {
+	return base + "/MP"
+}
+
+func getEnvoyPath(base, id string) string {
+	return base + "/MP/" + id
+}

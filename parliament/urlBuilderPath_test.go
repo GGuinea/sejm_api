@@ -52,3 +52,22 @@ func TestShouldAppendCommitteesToBaseURL(t *testing.T) {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}
 }
+
+func TestShouldAppendEnvoysToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/MP"
+	actual := getListEnvoysPath(base)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
+
+func TestShouldAppendEnvoyIdToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	id := "123"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/MP/123"
+	actual := getEnvoyPath(base, id)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
