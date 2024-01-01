@@ -7,3 +7,11 @@ func getListVotingsPath(base, sitting string) string {
 func getVotingPath(base, sitting, votingNumber string) string {
 	return base + "/votings/" + sitting + "/" + votingNumber
 }
+
+func getListClubsPath(base string) string {
+	return base + "/clubs"
+}
+
+func getClubPath(base, id string) string {
+	return base + "/clubs/" + id
+}
