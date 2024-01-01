@@ -15,3 +15,7 @@ func getListClubsPath(base string) string {
 func getClubPath(base, id string) string {
 	return base + "/clubs/" + id
 }
+
+func getListCommitteesPath(base string) string {
+	return base + "/committees"
+}

@@ -1,6 +1,8 @@
 package parliament
 
-import ("testing")
+import (
+	"testing"
+)
 
 func TestShouldAppendSittingToBaseURL(t *testing.T) {
 	base := "https://api.sejm.gov.pl/sejm/term/8"
@@ -37,6 +39,15 @@ func TestShouldAppendClubIdToBaseURL(t *testing.T) {
 	id := "PiS"
 	expected := "https://api.sejm.gov.pl/sejm/term/8/clubs/PiS"
 	actual := getClubPath(base, id)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
+
+func TestShouldAppendCommitteesToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/committees"
+	actual := getListCommitteesPath(base)
 	if actual != expected {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}
