@@ -119,3 +119,12 @@ func TestShouldAppendTodayVideosToBaseURL(t *testing.T) {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}
 }
+
+func TestShouldAppendInterpellationsToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/interpellations"
+	actual := getListInterpellationsPath(base)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}

@@ -47,3 +47,7 @@ func getListVideosPath(base string) string {
 func getListTodayVideosPath(base string) string {
 	return base + "/videos/today"
 }
+
+func getListInterpellationsPath(base string) string {
+	return base + "/interpellations"
+}
