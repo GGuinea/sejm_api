@@ -101,3 +101,21 @@ func TestShouldAppendPrintNumberAndFilenameToBaseURL(t *testing.T) {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}
 }
+
+func TestShouldAppendVideosToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/videos"
+	actual := getListVideosPath(base)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
+
+func TestShouldAppendTodayVideosToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/videos/today"
+	actual := getListTodayVideosPath(base)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}

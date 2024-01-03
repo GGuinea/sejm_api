@@ -39,3 +39,11 @@ func getPrintPath(base, number string) string {
 func getPrintAttachementPath(base, number, filename string) string {
 	return base + "/prints/" + number + "/" + filename
 }
+
+func getListVideosPath(base string) string {
+	return base + "/videos"
+}
+
+func getListTodayVideosPath(base string) string {
+	return base + "/videos/today"
+}
