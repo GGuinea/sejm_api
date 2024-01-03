@@ -5,7 +5,7 @@ func getListVotingsPath(base, sitting string) string {
 }
 
 func getVotingPath(base, sitting, votingNumber string) string {
-	return base + "/votings/" + sitting + "/" + votingNumber
+	return getListVotingsPath(base, sitting) + "/" + votingNumber
 }
 
 func getListClubsPath(base string) string {
@@ -13,7 +13,7 @@ func getListClubsPath(base string) string {
 }
 
 func getClubPath(base, id string) string {
-	return base + "/clubs/" + id
+	return getListClubsPath(base) + "/" + id
 }
 
 func getListCommitteesPath(base string) string {
@@ -25,7 +25,7 @@ func getListEnvoysPath(base string) string {
 }
 
 func getEnvoyPath(base, id string) string {
-	return base + "/MP/" + id
+	return getListEnvoysPath(base) + "/" + id
 }
 
 func getListPrintsPath(base string) string {
@@ -33,11 +33,11 @@ func getListPrintsPath(base string) string {
 }
 
 func getPrintPath(base, number string) string {
-	return base + "/prints/" + number
+	return getListPrintsPath(base) + "/" + number
 }
 
 func getPrintAttachementPath(base, number, filename string) string {
-	return base + "/prints/" + number + "/" + filename
+	return getPrintPath(base, number) + "/" + filename
 }
 
 func getListVideosPath(base string) string {
@@ -45,7 +45,7 @@ func getListVideosPath(base string) string {
 }
 
 func getListTodayVideosPath(base string) string {
-	return base + "/videos/today"
+	return getListVideosPath(base) + "/today"
 }
 
 func getListInterpellationsPath(base string) string {
