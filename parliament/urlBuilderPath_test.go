@@ -71,3 +71,33 @@ func TestShouldAppendEnvoyIdToBaseURL(t *testing.T) {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}
 }
+
+func TestShouldAppendPrintsToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/prints"
+	actual := getListPrintsPath(base)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
+
+func TestShouldAppendPrintNumberToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	number := "123"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/prints/123"
+	actual := getPrintPath(base, number)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
+
+func TestShouldAppendPrintNumberAndFilenameToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	number := "123"
+	filename := "123.pdf"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/prints/123/123.pdf"
+	actual := getPrintAttachementPath(base, number, filename)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}

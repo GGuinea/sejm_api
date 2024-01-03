@@ -27,3 +27,15 @@ func getListEnvoysPath(base string) string {
 func getEnvoyPath(base, id string) string {
 	return base + "/MP/" + id
 }
+
+func getListPrintsPath(base string) string {
+	return base + "/prints"
+}
+
+func getPrintPath(base, number string) string {
+	return base + "/prints/" + number
+}
+
+func getPrintAttachementPath(base, number, filename string) string {
+	return base + "/prints/" + number + "/" + filename
+}

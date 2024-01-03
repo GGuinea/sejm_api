@@ -40,3 +40,22 @@ func get(url string) (*json.Decoder, error) {
 
 	return decoder, nil
 }
+
+func getFile(url string) ([]byte, error) {
+	resp, err := http.Get(url)
+	if err != nil {
+		return nil, fmt.Errorf("Error: %s", err)
+	}
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, fmt.Errorf("Error: %s", err)
+	}
+
+	if resp.StatusCode != 200 {
+		return nil, fmt.Errorf("Error: %s", resp.Status)
+	}
+
+	return body, nil
+}
