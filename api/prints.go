@@ -1,4 +1,4 @@
-package parliament
+package api
 
 type Print struct {
 	Number           string   `json:"number"`

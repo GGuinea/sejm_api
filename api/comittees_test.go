@@ -1,4 +1,4 @@
-package parliament
+package api
 
 import (
 	"testing"

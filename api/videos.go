@@ -1,4 +1,4 @@
-package parliament
+package api
 
 type Video struct {
 	Id            string `json:"unid"`

@@ -1,4 +1,4 @@
-package parliament
+package api
 
 type Envoy struct {
 	Active         bool   `json:"active"`

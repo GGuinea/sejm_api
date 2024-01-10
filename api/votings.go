@@ -1,4 +1,4 @@
-package parliament
+package api
 
 type Voting struct {
 	Abstain          int            `json:"abstain"`

@@ -1,4 +1,4 @@
-package parliament
+package api
 
 type Club struct {
 	Id          string `json:"id"`

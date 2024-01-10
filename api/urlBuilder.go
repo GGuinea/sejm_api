@@ -1,4 +1,4 @@
-package parliament
+package api
 
 func getListVotingsPath(base, sitting string) string {
 	return base + "/votings/" + sitting
