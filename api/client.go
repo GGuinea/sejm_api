@@ -14,7 +14,7 @@ type Client struct {
 }
 
 const (
-	API_BASE_URL = "https://api.sejm.gov.pl/sejm/term"
+	API_BASE_URL = "http://api.sejm.gov.pl/sejm/term"
 )
 
 func NewClient(term string) *Client {
