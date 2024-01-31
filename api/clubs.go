@@ -4,7 +4,7 @@ type Club struct {
 	Id          string `json:"id"`
 	Email       string `json:"email"`
 	Name        string `json:"name"`
-	MemgerCount int    `json:"memberCount"`
+	MemberCount int    `json:"membersCount"`
 }
 
 func (c *Client) ListClubs() (clubs []Club, err error) {
