@@ -8,7 +8,7 @@ type Print struct {
 	DeliveryDate     string   `json:"deliveryDate"`
 	DocumentDate     string   `json:"documentDate"`
 	ProcessPrint     []string `json:"processPrint"`
-	Attachements     []string `json:"attachements"`
+	Attachements     []string `json:"attachments"`
 	AdditionalPrints []Print  `json:"additionalPrints"`
 	NumberAssociated []string `json:"numberAssociated"`
 }
