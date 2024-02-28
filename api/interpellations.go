@@ -67,6 +67,22 @@ func (c *Client) ListInterpellations(params Params) ([]Interpellation, error) {
 	return interpellations, nil
 }
 
+func (c *Client) GetInterpelation(id string) (*Interpellation, error) {
+	url := getInterpelationPath(c.URL, id)
+
+	pureResponseDecoder, err := get(url)
+	if err != nil {
+		return nil, err
+	}
+
+	interpellation := Interpellation{}
+	err = pureResponseDecoder.Decode(&interpellation)
+	if err != nil {
+		return nil, err
+	}
+	return &interpellation, nil
+}
+
 func buildParams(params Params) string {
 	var result string
 	if params.Offset != 0 {

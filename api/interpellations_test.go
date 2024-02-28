@@ -25,3 +25,20 @@ func TestShoudlListInterpellations(t *testing.T) {
 		t.Errorf("Expected title to contain 'Interpelacja'")
 	}
 }
+
+func TestShouldReturnOneInterpelation(t *testing.T) {
+	term := "10"
+	client := NewClient(term)
+	interpellation, err := client.GetInterpelation("1")
+
+	if err != nil {
+		t.Errorf("Error: %s", err)
+	}
+
+	if interpellation == nil {
+		t.Errorf("Should not be nill")
+	}
+	if !strings.Contains(*&interpellation.Title, "rodzinnych") {
+		t.Errorf("Wrong interpellation has been return")
+	}
+}

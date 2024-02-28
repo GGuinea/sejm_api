@@ -128,3 +128,12 @@ func TestShouldAppendInterpellationsToBaseURL(t *testing.T) {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}
 }
+
+func TestShouldAppendInterpellationWithIdToBaseURL(t *testing.T) {
+	base := "https://api.sejm.gov.pl/sejm/term/8"
+	expected := "https://api.sejm.gov.pl/sejm/term/8/interpellations/10"
+	actual := getInterpelationPath(base, "10")
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
