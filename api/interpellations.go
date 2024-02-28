@@ -76,7 +76,7 @@ func buildParams(params Params) string {
 		result += "&limit=" + fmt.Sprint(params.Limit)
 	}
 	if params.SortBy != "" {
-		result += "&sortBy=" + params.SortBy
+		result += "&sort_by=" + params.SortBy
 	}
 	if params.From != "" {
 		result += "&from=" + params.From
